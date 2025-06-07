@@ -1,43 +1,39 @@
-# Graphical-Password-Software-Information-Security-
+# Graphical Password Authentication Software
 
-A Python application for secure graphical password authentication using image segments. Users select a sequence of image parts as their password. Multiple images and user credentials are managed with SQLite. The GUI is built with Tkinter.
+This project implements a graphical password authentication system using Python. Instead of traditional alphanumeric passwords, users authenticate by selecting a series of images or points on an image, enhancing security and usability.
+
+## Project Summary
+
+Graphical passwords offer an alternative authentication method that is often easier to remember and harder to guess. This system allows users to register and authenticate using image-based inputs, with a graphical interface built using Python's GUI libraries.
 
 ## Features
 
-- Users upload images and select a sequence of segments as their password
-- Authentication by clicking the correct sequence of image parts
-- Supports multiple users and multiple images per user
-- Credentials and image info stored securely in SQLite database
+- Image-based user registration and login
+- Graphical User Interface (GUI) for ease of use
+- Local database (`SQLite`) to store user credentials
+- Modular codebase for extensibility
+- Asset management for custom images and buttons
 
-## How It Works
+## Technologies Used
 
-1. **Registration:**  
-   - Upload an image  
-   - Image is split into a 3x3 grid  
-   - User selects a sequence of segments as their password  
-   - Sequence is hashed and stored in SQLite
+- Python 3
+- Tkinter (GUI)
+- SQLite (Database)
+- PIL (Python Imaging Library)
+- Custom image assets
 
-2. **Login:**  
-   - User selects an image  
-   - Clicks segments in the correct order  
-   - Sequence is verified against stored hash
+## File Structure
 
-## Requirements
+- `gui.py`, `gui2.py` – Graphical interfaces for login and registration
+- `Insert.py` – Handles user insertion into the database
+- `image_mod.py` – Image handling and processing
+- `users.db` – SQLite database storing user credentials
+- `assets/` – Contains GUI image assets (buttons, entries, etc.)
 
-- Python 3.x
-- Tkinter
-- Pillow
-- sqlite3 (standard with Python)
+## How to Run
 
-## Running the App
-
-1. Install dependencies:  
-   `pip install Pillow`
-2. Run the script:  
-   `python graphical_password.py`
-
-## Applications
-
-- Secure login systems
-- Visual authentication for kiosks or shared devices
+1. Ensure Python 3 is installed.
+2. Install required libraries (if not already available):
+   ```bash
+   pip install pillow
 
