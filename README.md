@@ -1,35 +1,43 @@
 # Graphical-Password-Software-Information-Security-
 
-This project implements a graphical password authentication system where users select image segments in sequence. Built with Python's Tkinter for GUI and SQLite for database storage, it offers secure, visual-based authentication.
+A Python application for secure graphical password authentication using image segments. Users select a sequence of image parts as their password. Multiple images and user credentials are managed with SQLite. The GUI is built with Tkinter.
 
----
+## Features
 
-## Key Features
+- Users upload images and select a sequence of segments as their password
+- Authentication by clicking the correct sequence of image parts
+- Supports multiple users and multiple images per user
+- Credentials and image info stored securely in SQLite database
 
-- **Image Segmentation**: Divides uploaded images into 3x3 grid segments
-- **Sequence Authentication**: Users authenticate by selecting segments in predefined order
-- **Multi-User Support**: Stores multiple users with individual image sets
-- **Encrypted Storage**: Passwords stored as SHA-256 hashed sequences
-- **Database Management**: SQLite backend for user credentials and image metadata
+## How It Works
 
----
+1. **Registration:**  
+   - Upload an image  
+   - Image is split into a 3x3 grid  
+   - User selects a sequence of segments as their password  
+   - Sequence is hashed and stored in SQLite
 
-## System Workflow
+2. **Login:**  
+   - User selects an image  
+   - Clicks segments in the correct order  
+   - Sequence is verified against stored hash
 
-### Registration Phase
-1. User uploads image (JPG/PNG)
-2. System segments image into 9 parts
-3. User selects 4-6 segments in sequence
-4. System stores:
-   - Original image path
-   - Segment sequence pattern
-   - SHA-256 hash of sequence
+## Requirements
 
-### Authentication Phase
-1. System displays jumbled segments
-2. User recreates original sequence
-3. System verifies against stored hash
+- Python 3.x
+- Tkinter
+- Pillow
+- sqlite3 (standard with Python)
 
----
+## Running the App
 
-## Database Schema (SQLite)
+1. Install dependencies:  
+   `pip install Pillow`
+2. Run the script:  
+   `python graphical_password.py`
+
+## Applications
+
+- Secure login systems
+- Visual authentication for kiosks or shared devices
+
